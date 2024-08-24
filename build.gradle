@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 group 'ru.clevertec'
@@ -16,6 +17,7 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
 }
 
 tasks.named('jar') {
@@ -26,4 +28,12 @@ tasks.named('jar') {
         )
     }
     base.archivesName = 'utils'
+}
+
+jacoco {
+    toolVersion = "0.8.12"
+}
+
+jacocoTestReport {
+    dependsOn test
 }
