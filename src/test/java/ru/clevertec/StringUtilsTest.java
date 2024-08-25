@@ -7,7 +7,10 @@ public class StringUtilsTest {
 
     @Test
     void testIsPositiveNumber() {
-        boolean result = StringUtils.isPositiveNumber("17");
-        Assertions.assertTrue(result);
+        Assertions.assertTrue(StringUtils.isPositiveNumber("17"));
+        Assertions.assertTrue(StringUtils.isPositiveNumber("17.55"));
+        Assertions.assertFalse(StringUtils.isPositiveNumber("-44"));
+        Assertions.assertFalse(StringUtils.isPositiveNumber("0"));
+        Assertions.assertFalse(StringUtils.isPositiveNumber(null));
     }
 }
