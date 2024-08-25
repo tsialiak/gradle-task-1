@@ -6,8 +6,11 @@ plugins {
 group 'ru.clevertec'
 version '1.3.5'
 
-repositories {
-    mavenCentral()
+allprojects {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
 }
 
 dependencies {
