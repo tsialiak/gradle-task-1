@@ -1,11 +1,13 @@
 package ru.clevertec;
 
 public class StringUtils {
-    public static void main(String[] args) {
-        System.out.println(isPositiveNumber("5"));
-    }
-
     public static boolean isPositiveNumber(String str) {
-        return Integer.parseInt(str) > 0;
+        try {
+            if (str == null) return false;
+            double number = Double.parseDouble(str);
+            return number > 0;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }
